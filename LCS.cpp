@@ -15,9 +15,8 @@ void print_lcs(vector<char> a,  vector<vector<int>> cost, vector<vector<char>> d
 }
 
 int main(){
-    vector<char> a = {'0','a','a','b','c','b','d','c'};
-    vector<char> b = {'0','a','a','b','c','b','d','c'};
-    
+    vector<char> a = {'0','e','x','p','o','n','e','n','t','i','a','l'};
+    vector<char> b = {'0','p','o','l','y','n','o','m','i','a','l'};
     vector<vector<int>> cost(a.size(), vector<int>(b.size()));
     vector<vector<char>> dir(a.size(), vector<char>(b.size()));
     
@@ -27,7 +26,7 @@ int main(){
                 cost[i][j] = 0;
                 dir[i][j] = 'h';
             }else{
-                if(a[i] == b[j] && i!=j){
+                if(a[i] == b[j]){
                     cost[i][j] = cost[i-1][j-1] + 1;
                     dir[i][j] = 'd';
                 }else{
